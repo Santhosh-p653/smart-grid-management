@@ -63,7 +63,11 @@ It consists of:
 
 1. Start the backend first (steps above).
 2. Then start the frontend.
-3. Open the UI in a browser and log in using a user created via the API (or via DB seed). The default admin credentials can be created manually in the `users` table with role `ADMIN`.
+3. Open the UI in a browser and log in using the default credentials:
+   - **Administrator:** `admin` / `admin123`
+   - **Grid Operator:** `operator1` / `operator123`
+
+   *Note: If the backend connection is offline or unconfigured, the frontend automatically falls back to local simulation mode with the same credentials.*
 
 ## Project Structure
 

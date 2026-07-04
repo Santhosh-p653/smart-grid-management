@@ -46,4 +46,11 @@ public class GridNode {
     @OneToMany(mappedBy = "gridNode", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<Outage> outages = new ArrayList<>();
+
+    // Added getters for fields used in AnalyticsService
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public Double getCapacity() { return capacity; }
+    public NodeStatus getStatus() { return status; }
+    public Zone getZone() { return zone; }
 }

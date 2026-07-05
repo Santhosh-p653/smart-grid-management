@@ -90,7 +90,7 @@ public class FaultService {
             // Check if there are other active faults on this node before making it active
             GridNode node = fault.getGridNode();
             boolean hasOtherActiveFaults = node.getFaults().stream()
-                    .anyMatch(f -> f.getId() != id && f.getStatus() != FaultStatus.RESOLVED);
+                    .anyMatch(f -> !f.getId().equals(id) && f.getStatus() != FaultStatus.RESOLVED);
             if (!hasOtherActiveFaults) {
                 node.setStatus(NodeStatus.ACTIVE);
                 gridNodeRepository.save(node);
